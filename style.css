@@ -46,6 +46,11 @@ button {
     width: 115px;
     margin-top: 10px;
     border: none;
-    border-radius: 25px;
     background-color: #76ABAE;
+    border-radius: 25px;
+}
+
+p {
+    color: #EEEEEE;
+    margin-top: 10px;
 }
