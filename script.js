@@ -7,6 +7,9 @@ const userNum = document.getElementById('userNum');
 // Get the response element from the DOM where we will display the game's messages
 const response = document.getElementById('response');
 
+// Initialize counter for number of tries
+let tries = 0
+
 // Add a click event listener to the button. When the button is clicked, the guessNumber function will be called
 document.getElementById("button").addEventListener("click", guessNumber);
 
@@ -14,6 +17,9 @@ document.getElementById("button").addEventListener("click", guessNumber);
 function guessNumber() {
   // Parse the user's input as an integer
   const userChoice = parseInt(userNum.value);
+
+  // Increment the number of tries
+  tries++;
 
   // Check if the user's number is outside the valid range (1-100) or valid integer
   if (userChoice > 100 || userChoice < 1 || isNaN(userChoice)) {
@@ -27,6 +33,6 @@ function guessNumber() {
     response.innerHTML = 'Too low!';
   } else {
     // If none of the above conditions are met, the user's guess must be correct
-    response.innerHTML = 'You got it!';
+    response.innerHTML = `You got it! It took you ${tries} tries.`;
   }
 }
