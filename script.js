@@ -15,8 +15,8 @@ function guessNumber() {
   // Parse the user's input as an integer
   const userChoice = parseInt(userNum.value);
 
-  // Check if the user's number is outside the valid range (1-100)
-  if (userChoice > 100 || userChoice < 1) {
+  // Check if the user's number is outside the valid range (1-100) or valid integer
+  if (userChoice > 100 || userChoice < 1 || isNaN(userChoice)) {
     // If it is, display an error message
     response.innerHTML = 'Please enter a number between 1 and 100.';
   } else if (userChoice > cpuChoice) {
